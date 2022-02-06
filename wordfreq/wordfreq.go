@@ -40,11 +40,7 @@ func WordCountService(text string) []byte {
 	words := strings.Fields(punctuationLessText)
 	wordCounts := make(map[string]int)
 	for _, word := range words {
-		if wordCounts[word] == 0 {
-			wordCounts[word] = 1
-		} else {
-			wordCounts[word]++
-		}
+		wordCounts[word]++
 	}
 	wf := mapToSlice(wordCounts)
 	sort.Sort(sort.Reverse(wf)) //do sort in descending order
