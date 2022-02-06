@@ -2,6 +2,7 @@ package main
 
 import (
 	"Project2/wordfreq"
+	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -13,6 +14,7 @@ func main() {
 		panic(err)
 	}
 
-	wordfreq.WordCountService(string(userInput))
+	jsonOutput := wordfreq.WordCountService(string(userInput))
+	fmt.Println(string(jsonOutput))
 	//
 }
