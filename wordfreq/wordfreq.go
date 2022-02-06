@@ -2,7 +2,6 @@ package wordfreq
 
 import (
 	"encoding/json"
-	"fmt"
 	"log"
 	"regexp"
 	"sort"
@@ -34,7 +33,7 @@ func mapToSlice(m map[string]int) wordFrequencies {
 	return wf
 }
 
-func WordCountService(text string) {
+func WordCountService(text string) []byte {
 	lowerCasedText := strings.ToLower(text)
 	newLineLessText := strings.ReplaceAll(lowerCasedText, "\n", " ")
 	punctuationLessText := depunctuator(newLineLessText)
@@ -56,7 +55,7 @@ func WordCountService(text string) {
 		top10Words = wf[:10]
 	}
 	jsonData, _ := json.MarshalIndent(top10Words, "", " ")
-	fmt.Println(string(jsonData))
+	return jsonData
 
 }
 
