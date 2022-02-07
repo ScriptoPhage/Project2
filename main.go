@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Project2/wordfreq"
 	"fmt"
+	"github.com/ScriptoPhage/Project1/wordfreq"
 	"io/ioutil"
 	"os"
 )
